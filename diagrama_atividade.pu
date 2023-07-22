@@ -1,0 +1,29 @@
+@startuml
+start
+switch (meal)
+case ( list )
+	if (`planejamento.json` existe?) then (sim)
+	#palegreen:Ler o arquivo `planejamento.json`;
+	else (não)
+	#pink:Mostrar que não possui dados;
+	endif
+	:Listar o planejamento com base na data atual;
+case ( add ) 
+		if (argumentos válidos?) then (sim)
+	if (`planejamento.json` existe?) then (sim)
+	else (não)
+		:Criar o arquivo `planejamento.json`;
+	endif
+			#palegreen:Adicionar ao `planejamento.json`;
+		else (não)
+			#pink:Mostrar mensagem de erro com o formato válido;
+			stop
+		endif
+	:Listar o planejamento com base na data atual;
+case ( shop )
+  :Mostrar lista de compras;
+  case ( nenhuma ocorrrencia )
+  :Mostrar help;
+endswitch
+stop
+@enduml
