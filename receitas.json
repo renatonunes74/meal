@@ -1,0 +1,31 @@
+[
+  {
+    "receita": "salada de frutas",
+    "tipo": "almoço",
+    "ingredientes": {
+      "alface": 0.5,
+      "tomate": 0.25
+    },
+    "validade": 1,
+    "porcoes": 2
+  },
+  {
+    "receita": "arroz com feijão",
+    "tipo": "almoço",
+    "ingredientes": {
+      "arroz": 2,
+      "feijão": 2
+    },
+    "validade": 3,
+    "porcoes": 2
+  },
+  {
+    "receita": "Sopa",
+    "tipo": "almoço",
+    "ingredientes": {
+      "nome": 0
+    },
+    "validade": "5",
+    "porcoes": "3"
+  }
+]

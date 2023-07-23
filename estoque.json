@@ -1,0 +1,33 @@
+[
+  {
+    "ingrediente": "arroz",
+    "unidade": "kg",
+    "quantidade": 10,
+    "validade": "2023-08-20"
+  },
+  {
+    "ingrediente": "feijão",
+    "unidade": "kg",
+    "quantidade": 5,
+    "validade": "2023-08-20"
+  },
+  {
+    "ingrediente": "alface",
+    "unidade": "qnt",
+    "quantidade": 6,
+    "validade": "2023-08-10"
+  },
+  {
+    "ingrediente": "tomate",
+    "unidade": "qnt",
+    "quantidade": 5,
+    "validade": "2023-08-07"
+  },
+  {
+    "ingrediente": "manga",
+    "unidade": "qnt",
+    "quantidade": 4,
+    "validade": "2023-08-09"
+  }
+]
+
