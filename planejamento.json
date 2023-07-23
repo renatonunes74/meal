@@ -1,14 +1,86 @@
 [
-	{
-		"data": "2023-07-22",
-		"refeicoes": [
-			{
-				"nome": "salada de frutas"
-			},
-			{
-				"nome": "arroz com feijão"
-			}
-		]
-	}
+  {
+    "data": "2023-07-26",
+    "refeicoes": [
+      {
+        "nome": "salada de frutas",
+        "tipo": "Café da Manhã"
+      },
+      {
+        "nome": "arroz com feijão",
+        "tipo": "Almoço"
+      },
+      {
+        "nome": "bolo de chocolate",
+        "tipo": "Café da Tarde"
+      },
+      {
+        "nome": "lasanha",
+        "tipo": "Janta"
+      }
+    ]
+  },
+  {
+    "data": "2023-07-27",
+    "refeicoes": [
+      {
+        "nome": "omelete",
+        "tipo": "Café da Manhã"
+      },
+      {
+        "nome": "salada mista",
+        "tipo": "Almoço"
+      },
+      {
+        "nome": "biscoitos",
+        "tipo": "Café da Tarde"
+      },
+      {
+        "nome": "frango grelhado",
+        "tipo": "Janta"
+      }
+    ]
+  },
+  {
+    "data": "2023-07-28",
+    "refeicoes": [
+      {
+        "nome": "pão com manteiga",
+        "tipo": "Café da Manhã"
+      },
+      {
+        "nome": "sopa de legumes",
+        "tipo": "Almoço"
+      },
+      {
+        "nome": "torta de maçã",
+        "tipo": "Café da Tarde"
+      },
+      {
+        "nome": "peixe assado",
+        "tipo": "Janta"
+      }
+    ]
+  },
+  {
+    "data": "2023-07-29",
+    "refeicoes": [
+      {
+        "nome": "vitamina de frutas",
+        "tipo": "Café da Manhã"
+      },
+      {
+        "nome": "frango ao molho de laranja",
+        "tipo": "Almoço"
+      },
+      {
+        "nome": "chá com biscoitos",
+        "tipo": "Café da Tarde"
+      },
+      {
+        "nome": "espaguete com almôndegas",
+        "tipo": "Janta"
+      }
+    ]
+  }
 ]
-
