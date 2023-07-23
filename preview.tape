@@ -6,18 +6,20 @@ Set Height 600
 Set Padding 20
 Set Shell zsh
 Set TypingSpeed 0.2
-Type "./meal.sh -a" Sleep 2s Enter Sleep 3s
-Type "Sopa" Sleep 2s Enter Sleep 3s
-Type "almoço" Sleep 2s Enter Sleep 3s
-Type "5" Sleep 2s Enter Sleep 3s
-Type "3" Sleep 2s Enter Sleep 3s
-Type "./meal.sh -l" Sleep 2s Enter Sleep 3s
-Type "vim receitas.json" Sleep 2s Enter Sleep 4s
-Down 21
-Type ":q" Sleep 2s Enter Sleep 2s
-Type "vim planejamento.json" Sleep 2s Enter Sleep 4s
-Down 4
-Type "V"
-Down 3
-Escape
-Type ":q" Sleep 2s Enter Sleep 2s
+Type "./teste.sh" Sleep 2s Enter Sleep 3s
+Type "m" Sleep 2s Enter Sleep 3s
+Up@3s 1
+Right@3s 4 Enter Sleep 3s
+Down@3s 5 Enter Sleep 3s
+Enter Sleep 3s
+Type "torta de maçã" Sleep 2s Enter Sleep 3s
+Down@3s 1 Enter Sleep 3s
+Down@3s 2 Enter Sleep 3s
+Type "d" Sleep 2s Enter Sleep 3s
+Up@3s 1
+Down@3s 1 Enter Sleep 3s
+Enter Sleep 3s
+Type "m" Sleep 2s Enter Sleep 3s
+Up@3s 1
+Down@3s 1 Enter Sleep 3s
+Right@3s 1 Enter Sleep 4s
