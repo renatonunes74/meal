@@ -11,8 +11,7 @@
 [Porque usar](#porque-usar) -
 [Como usar](#como-usar) -
 [Quando usar](#quando-usar) -
-[Aonde usar](#aonde-usar) -
-[Testado](#testado)
+[Aonde usar](#aonde-usar)
 
 </div>
 
