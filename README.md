@@ -38,6 +38,7 @@
 ### Dependências necessárias
 - [FZF](https://github.com/junegunn/fzf) (Fuzzy finder)
 - [Jq](https://github.com/jqlang/jq) (Manipulação de dados no formato JSON)
+- Dialog
 
 ### Funcionalidades
 #### Básico
