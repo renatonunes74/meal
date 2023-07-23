@@ -39,10 +39,11 @@
 ### Funcionalidades
 #### Básico
 - [ ] Adicionar refeições para os dias "planejados"
-	- `meal add "nome da refeição" 2023-07-23`
+	- `meal --add "nome da refeição" 2023-07-23`
 - [ ] Mostrar o que devo preparar hoje e "link para a receita""
-	- `meal list`
+	- `meal --list`
 - [ ] Lista de compras com base nas receitas planejadas
+	- `meal --shop`
 ---
 #### Avançado
 - [ ] Mostrar a quantidade de carboidratos, proteínas etc
