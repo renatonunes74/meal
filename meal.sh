@@ -1,17 +1,17 @@
-# date=$(date "+%Y-%m-%d")
-date="2023-07-26"
+filePlanejamento="./planejamento.json"
+fileReceitas="./receitas.json"
 
-echo $janta
-echo $almoco
-echo $cafeM
-echo $cafeT
-
+# Data atual
+date=$(date "+%Y-%m-%d")
 
 while true; do
-	cafeM=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Café da Manhã") | .nome' planejamento.json)
-	almoco=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Almoço") | .nome' planejamento.json)
-	cafeT=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Café da Tarde") | .nome' planejamento.json)
-	janta=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Janta") | .nome' planejamento.json)
+	# Váriaveis do tipo de planejamento dado
+	cafeM=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Café da Manhã") | .nome' $filePlanejamento)
+	almoco=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Almoço") | .nome' $filePlanejamento)
+	cafeT=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Café da Tarde") | .nome' $filePlanejamento)
+	janta=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Janta") | .nome' $filePlanejamento)
+
+	# Menu principal - Que mostra o planejamento da data atual
 	escolha=$(dialog \
 		--keep-tite \
 		--title 'MEAL' \
@@ -26,38 +26,39 @@ while true; do
 		"Adicionar" "Adicionar planejamento"
 	)
 
-	if [ $? -ne 0 ]
-	then 
-		exit 1
-	fi
+		# Verificar se o usuário pressionou "Cancelar"
+		if [ $? -ne 0 ]
+		then 
+			exit 1
+		fi
 
-	case $escolha in
-		"Café da Manhã")
-			dialog --keep-tite --msgbox "$escolha" 0 0
-			;;
-		"Almoço")
-			dialog --keep-tite --msgbox "$almoco" 0 0
-			;;
-		"Café da Tarde")
-			dialog --keep-tite --msgbox "$escolha" 0 0
-			;;
-		"Janta")
-			dialog --keep-tite --msgbox "$escolha" 0 0
-			;;
-		"Mudar data")
-			date=$(dialog --keep-tite --stdout --date-format "%Y-%m-%d" --calendar "Mudar a data do planejamento" 0 0 )
-			;;
-		"Adicionar")
-			while true; do
-				adicionarPlanejamento=$(dialog \
-					--keep-tite \
-					--title 'MEAL' \
-					--menu "Adicionar ao planejamento:"  \
-					--stdout \
-					0 0 0 \
-					"Nome da Receita" "$receitaNome" \
-					"Tipo" "$receitaTipo" \
-					"Data" "$receitaData")
+		case $escolha in
+			"Café da Manhã")
+				dialog --keep-tite --msgbox "$escolha" 0 0
+				;;
+			"Almoço")
+				dialog --keep-tite --msgbox "$almoco" 0 0
+				;;
+			"Café da Tarde")
+				dialog --keep-tite --msgbox "$escolha" 0 0
+				;;
+			"Janta")
+				dialog --keep-tite --msgbox "$escolha" 0 0
+				;;
+			"Mudar data")
+				date=$(dialog --keep-tite --stdout --date-format "%Y-%m-%d" --calendar "Mudar a data do planejamento" 0 0 )
+				;;
+			"Adicionar")
+				while true; do
+					adicionarPlanejamento=$(dialog \
+						--keep-tite \
+						--title 'MEAL' \
+						--menu "Adicionar ao planejamento:"  \
+						--stdout \
+						0 0 0 \
+						"Nome da Receita" "$receitaNome" \
+						"Tipo" "$receitaTipo" \
+						"Data" "$receitaData")
 
 		# Verificar se o usuário pressionou "Cancelar"
 		if [ -z "$adicionarPlanejamento" ]; then
@@ -65,7 +66,7 @@ while true; do
 		fi
 		case $adicionarPlanejamento in
 			"Nome da Receita")
-				receitaNome=$(jq -r '.[] | .receita' receitas.json | fzf)
+				receitaNome=$(jq -r '.[] | .receita' $fileReceitas | fzf)
 				;;
 			"Tipo")
 				receitaTipo=$(dialog \
@@ -84,6 +85,7 @@ while true; do
 									;;
 							esac
 
+							# Caso todos os dados tenham sido inseridos
 							if [ -n "$receitaNome" ] && [ -n "$receitaTipo" ] && [ -n "$receitaData" ]; then
 								dialog --yesno "Confirma a criação do planejamento?" 0 0
 								case $? in
@@ -101,8 +103,8 @@ while true; do
 																					}
 																					]
 																				}
-																				]' planejamento.json > planejamento.json.tmp
-																				mv planejamento.json.tmp planejamento.json
+																				]' $filePlanejamento > $filePlanejamento.tmp
+																				mv $filePlanejamento.tmp $filePlanejamento
 																				break
 																		esac
 							fi
