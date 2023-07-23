@@ -20,7 +20,8 @@
 ![](preview.gif)
 
 ## Porque usar
--
+- Ele conta com o gerenciamento de refeições planejadas, com o foco em ser rápido e acessível do dia a dia
+- Para ver mais competencias esse script tem, veja no tópico [funcionalidades](#funcionalidades).
 
 ## Como usar
 1. Clone o repositório
@@ -54,8 +55,7 @@
 ![Diagrama de Atividade](diagrama_atividade.png)
 
 ### Tecnologias complementares
-- Complementares:
-     - [VHS](https://github.com/charmbracelet/vhs) (Criação de GIF do terminal via código)
+- [VHS](https://github.com/charmbracelet/vhs) (Criação de GIF do terminal via código)
 
 ## Quando usar
 - Quando necessitar documentar, verificar ou até mesmo demonstrar o relacionamento das classes.
