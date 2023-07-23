@@ -17,7 +17,7 @@
 </div>
 
 ## Pré-visualização
-![]()
+![](preview.gif)
 
 ## Porque usar
 -
