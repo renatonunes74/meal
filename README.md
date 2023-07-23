@@ -6,7 +6,7 @@
 ![Repository issues"](https://img.shields.io/github/issues/rockofox/firefox-minima.svg?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/renatonunes74/meal?style=for-the-badge)
 # Meal
-**Gerenciador de refeições CLI<br>Esta em desenvolvimento!**
+**Gerenciador de refeições usando Dialog<br>Esta em desenvolvimento!**
 
 [Porque usar](#porque-usar) -
 [Como usar](#como-usar) -
@@ -25,25 +25,24 @@
 ## Como usar
 1. Clone o repositório
     - `git clone https://github.com/renatonunes74/meal`
-1. Entre na pasta
+2. Entre na pasta
     - `cd meal`
-1. Execute 
+    - Edite os arquivos de `planejamento.json` e `receitas.json` com base em sua estrutura
+3. Execute 
     - CLI / via Terminal:
         - `chmod +x meal.sh` (Para deixar executável)
-        - `./meal.sh -h` (Para listar todas as funções)
-1. Agora é só adicionar receitas, estoque e listar!
+        - `./meal.sh` 
+4. Agora é só adicionar receitas, estoque e listar!
 
 ### Dependências necessárias
-- Pacotes Linux básicos, como: cat, grep, find, sed...
+- [FZF](https://github.com/junegunn/fzf) (Fuzzy finder)
+- [Jq](https://github.com/jqlang/jq) (Manipulação de dados no formato JSON)
 
 ### Funcionalidades
 #### Básico
-- [ ] Adicionar refeições para os dias "planejados"
-	- `meal --add "nome da refeição" 2023-07-23`
-- [ ] Mostrar o que devo preparar hoje e "link para a receita""
-	- `meal --list`
+- [x] Adicionar refeições para os dias "planejados"
+- [x] Mostrar o que devo preparar hoje
 - [ ] Lista de compras com base nas receitas planejadas
-	- `meal --shop`
 ---
 #### Avançado
 - [ ] Mostrar a quantidade de carboidratos, proteínas etc
@@ -54,20 +53,15 @@
 ##### Planejamento
 ![Diagrama de Atividade](diagrama_atividade.png)
 
-### Tecnologias usadas
-- FZF
-- Jq
+### Tecnologias complementares
 - Complementares:
-     <!-- - [VHS](https://github.com/charmbracelet/vhs) (Criação de GIF do terminal via código) -->
+     - [VHS](https://github.com/charmbracelet/vhs) (Criação de GIF do terminal via código)
 
 ## Quando usar
 - Quando necessitar documentar, verificar ou até mesmo demonstrar o relacionamento das classes.
 
 ## Aonde usar
 - Via terminal que suporte SHELL Script e as ferramentas ([Dependências necessárias](#dependências-necessárias))
-
-## Testado
-- []()
 
 ## Contribuição
 Estou aberto a contribuições, feedback e opiniões da comunidade! Se você tiver alguma ideia para melhorar o projeto, correções de bugs ou sugestões de novos recursos, ficarei feliz em receber sua contribuição! Basta enviar um Pull Request no repositório do projeto.
