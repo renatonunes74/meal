@@ -2,7 +2,8 @@ filePlanejamento="./planejamento.json"
 fileReceitas="./receitas.json"
 
 # Data atual
-date=$(date "+%Y-%m-%d")
+# date=$(date "+%Y-%m-%d")
+date="2023-07-23"
 
 while true; do
 	# Váriaveis do tipo de planejamento dado
@@ -10,6 +11,12 @@ while true; do
 	almoco=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Almoço") | .nome' $filePlanejamento)
 	cafeT=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Café da Tarde") | .nome' $filePlanejamento)
 	janta=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Janta") | .nome' $filePlanejamento)
+
+	# Descrição das receitas (refatorar)
+	cafeMd=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Café da Manhã") | .receita' $filePlanejamento)
+	almocoD=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Almoço") | .receita' $filePlanejamento)
+	cafeTd=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Café da Tarde") | .receita' $filePlanejamento)
+	jantaD=$(jq -r --arg date "$date" '.[] | select(.data==$date) | .refeicoes[] | select(.tipo=="Janta") | .receita' $filePlanejamento)
 
 	# Menu principal - Que mostra o planejamento da data atual
 	escolha=$(dialog \
@@ -34,16 +41,16 @@ while true; do
 
 		case $escolha in
 			"Café da Manhã")
-				dialog --keep-tite --msgbox "$escolha" 0 0
+				dialog --keep-tite --title "$escolha: $cafeM" --msgbox "$(cat $cafeMd)" 0 0
 				;;
 			"Almoço")
-				dialog --keep-tite --msgbox "$almoco" 0 0
+				dialog --keep-tite --title "$escolha: $almocoD" --msgbox "$(cat $almocoD)" 0 0
 				;;
 			"Café da Tarde")
-				dialog --keep-tite --msgbox "$escolha" 0 0
+				dialog --keep-tite --title "$escolha: $cafeTd" --msgbox "$(cat $cafeTd)" 0 0
 				;;
 			"Janta")
-				dialog --keep-tite --msgbox "$escolha" 0 0
+				dialog --keep-tite --title "$escolha: $jantaD" --msgbox "$(cat $jantaD)" 0 0
 				;;
 			"Mudar data")
 				date=$(dialog --keep-tite --stdout --date-format "%Y-%m-%d" --calendar "Mudar a data do planejamento" 0 0 )
